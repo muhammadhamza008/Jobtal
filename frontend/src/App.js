@@ -6,6 +6,7 @@ import SignUpPage from './components/sign-up-page';
 import {Route, Routes} from 'react-router-dom';
 import {Login} from './Login';
 import {Register} from './Register';
+import HomePageJobSeeker from './components/homepages/home-page-jobseeker';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
       </Route>
       <Route path="/signup">
         <Route index element = {<SignUpPage />} />
+      </Route>
+      <Route path="/jobseeker">
+        <Route index element = {<HomePageJobSeeker />} />
       </Route>
 
       // {/* <Route>

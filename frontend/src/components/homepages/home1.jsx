@@ -4,11 +4,19 @@ import homeimg1 from './homeimg1.jpg';
 
 import styles from './home1.module.css';
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from './loginbutton';
+import LogoutButton from './logoutbutton';
+import SignUpButton from './signupbutton';
+import { Login } from '../../Login';
+import SignUpPage from '../sign-up-page';
+
 
 
 
 const Home = (props) => {
-  
+
+
   const navigate = useNavigate();
 
   const handleSwitch_login = () =>{
@@ -55,8 +63,9 @@ const Home = (props) => {
             <span>
               {/* <span>Sign Up</span> */}
               {/* <button>Sign Up</button>*/}
-              <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button> 
-
+              {/* <button type="button" className={styles["button-1"]} onClick={LoginButton}>Sign Up</button> */}
+              <SignUpButton/>
+              {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button>  */}
               <br></br>
               <span></span>
             </span>
@@ -68,7 +77,8 @@ const Home = (props) => {
         <div className={styles['sign-in1']}>
 
           <div className={styles['rectangle5']}>
-            <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button>
+            {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button> */}
+            <LoginButton/>
             <p></p>
           </div>
         </div>
