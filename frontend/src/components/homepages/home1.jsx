@@ -4,11 +4,19 @@ import homeimg1 from './homeimg1.jpg';
 
 import styles from './home1.module.css';
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from './loginbutton';
+import LogoutButton from './logoutbutton';
+import SignUpButton from './signupbutton';
+import { Login } from '../../Login';
+import SignUpPage from '../sign-up-page';
+
 
 
 
 const Home = (props) => {
-  
+
+
   const navigate = useNavigate();
 
   const handleSwitch_login = () =>{
@@ -31,32 +39,16 @@ const Home = (props) => {
         <span className={styles['text04']}>
           <span>Job Portal</span>
         </span>
-        <div className={styles['menu']}>
-          <span className={styles['text06']}>
-            <span>For job seekers</span>
-          </span>
-          <span className={styles['text08']}>
-            <span>For employers</span>
-          </span>
-          <div className={styles['new-york']}>
-            <span className={styles['text10']}>
-              <span>Lahore</span>
-            </span>
-            <img
-              alt="Line11116"
-              src="/playground_assets/line11116-cltp.svg"
-              className={styles['line1']}
-            />
-          </div>
-        </div>
+
         <div className={styles['sign-in']}>
           
           <span className={styles['text12']}>
             <span>
               {/* <span>Sign Up</span> */}
               {/* <button>Sign Up</button>*/}
-              <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button> 
-
+              {/* <button type="button" className={styles["button-1"]} onClick={LoginButton}>Sign Up</button> */}
+              <SignUpButton/>
+              {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button>  */}
               <br></br>
               <span></span>
             </span>
@@ -68,15 +60,11 @@ const Home = (props) => {
         <div className={styles['sign-in1']}>
 
           <div className={styles['rectangle5']}>
-            <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button>
+            {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button> */}
+            <LoginButton/>
             <p></p>
           </div>
         </div>
-        <img
-        alt = "logo not loading"
-          src={logo}
-          className={styles['logo1']}
-        />
 
         <img alt="not loading" src = {homeimg1} className = {styles['img1']}/>
 
