@@ -39,24 +39,7 @@ const Home = (props) => {
         <span className={styles['text04']}>
           <span>Job Portal</span>
         </span>
-        <div className={styles['menu']}>
-          <span className={styles['text06']}>
-            <span>For job seekers</span>
-          </span>
-          <span className={styles['text08']}>
-            <span>For employers</span>
-          </span>
-          <div className={styles['new-york']}>
-            <span className={styles['text10']}>
-              <span>Lahore</span>
-            </span>
-            <img
-              alt="Line11116"
-              src="/playground_assets/line11116-cltp.svg"
-              className={styles['line1']}
-            />
-          </div>
-        </div>
+
         <div className={styles['sign-in']}>
           
           <span className={styles['text12']}>
@@ -82,11 +65,6 @@ const Home = (props) => {
             <p></p>
           </div>
         </div>
-        <img
-        alt = "logo not loading"
-          src={logo}
-          className={styles['logo1']}
-        />
 
         <img alt="not loading" src = {homeimg1} className = {styles['img1']}/>
 

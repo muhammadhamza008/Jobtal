@@ -26,37 +26,7 @@ const HomePageJobSeeker = (props) => {
         <span className={styles['text06']}>
           <span>Jobtal</span>
         </span>
-        <div className={styles['menu']}>
-          <img
-            src="/playground_assets/hhrumin11930-6k9.svg"
-            alt="hhrumin11930"
-            className={styles['hhrumin1']}
-          />
-          <img
-            src="/playground_assets/line11942-66xm.svg"
-            alt="Line11942"
-            className={styles['line1']}
-          />
-          <span className={styles['text08']}>
-            <span>Lahore</span>
-          </span>
-          <span className={styles['text10']}>
-            <span>View Applied Jobs</span>
-          </span>
-          <span className={styles['text12']}>
-            <span>Update Profile</span>
-          </span>
-          <div className={styles['resume']}>
-            <span className={styles['text14']}>
-              <span>Create a resume</span>
-            </span>
-          </div>
-        </div>
-        <img
-        alt = "logo not loading"
-          src={logo}
-          className={styles['logo1']}
-        />
+
       </div>
       <img alt="not loading" src = {homeimg1} className = {styles['img1']}/>
 

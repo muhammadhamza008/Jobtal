@@ -1,13 +1,13 @@
 .home-page-job-seeker {
     width: 100%;
-    height: 813px;
+    height: 613px;
     display: flex;
     position: relative;
     box-sizing: content-box;
     align-items: flex-start;
     flex-shrink: 0;
     border-color: rgba(0, 0, 0, 1);
-    border-style: solid;
+    /* border-style: solid; */
     border-width: 6px;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 1);
@@ -35,7 +35,7 @@
     background-color: transparent;
   }
   .group2 {
-    top: 16px;
+    top: -380px;
     left: 255px;
     width: 162px;
     height: 50px;
@@ -72,7 +72,7 @@
     
   }
   .group1 {
-    top: 0px;
+    top: -400px;
     left: 0px;
     width: 400px;
     height: 50px;
@@ -143,7 +143,7 @@
   }
 
   .text04 {
-    top: 503.304931640625px;
+    top:110px;
     left: 85px;
     color: rgba(103, 103, 103, 1);
     width: 375px;
@@ -162,7 +162,7 @@
     text-decoration: none;
   }
   .text06 {
-    top: 421px;
+    top: 21px;
     left: 80px;
     color: rgba(51, 51, 51, 1);
     width: 397px;
