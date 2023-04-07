@@ -10,11 +10,14 @@ import {Register} from './Register';
 import HomePageJobSeeker from './components/homepages/home-page-jobseeker';
 import Resume from './components/resume';
 import ResumeDisplay from './components/resumedisplay';
+import Navbar from './components/homepages/navbar';
 
 
 function App() {
   
   return (
+    <div>
+      <Navbar />
     <Routes>
       <Route path="/">
         <Route index element = {<SignUptest />} />
@@ -41,10 +44,10 @@ function App() {
         <Route index element = {<ResumeDisplay/>} />
       </Route>
     </Routes>
-    // <div>
-    //   <SignUptest/>
-    // </div>
+
+    </div>
   );
+  
 
 }
 
