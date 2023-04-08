@@ -6,7 +6,7 @@ import SignUpPage from './components/sign-up-page';
 import {Route, Routes} from 'react-router-dom';
 // import {Route, Routes} from 'react-router-dom@6.0.0-alpha.2'
 import {Login} from './Login';
-import {Register} from './Register';
+import Register from './Register';
 import HomePageJobSeeker from './components/homepages/home-page-jobseeker';
 import Resume from './components/resume';
 import ResumeDisplay from './components/resumedisplay';
