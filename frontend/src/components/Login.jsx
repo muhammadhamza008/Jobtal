@@ -1,71 +1,77 @@
 import React, { useState } from 'react';
-import logo from './components/logo.png';
-import homeimg1 from './components/homeimg1.jpg';
+import logo from './logo.png';
+import homeimg1 from './homeimg1.jpg';
 import Rectangle from './Rectangle.png'
 import styles from './login.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export const Login = (props) => {
+
+  const navigate = useNavigate();
+  const [email, setEmail] = useState ('');
+  const [password, setPassword] = useState ('');
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        email, password
+      })
+    })
+
+    const data = res.json();
+    
+    if(res.status === 400 || res.status === 422 || !data) {
+      window.alert("Invalid Credentials");
+    }
+    else {
+      window.alert("Login Successful");
+      navigate('/');
+    }
+
+  }
+
   return (
     <div>
       <div className={styles['sign-up-page']}>
-        <div className={styles['geometric']}>
-          <div className={styles['womancurcle']}>
-          </div>
-          <div className={styles['mancurcle']}>
-          </div>
-        </div>
-        <div className={styles['menu']}>
-          <span className={styles['text']}>
-            <span>For job seekers</span>
-          </span>
-          <span className={styles['text02']}>
-            <span>For employers</span>
-          </span>
-          <div className={styles['new-york']}>
-            <span className={styles['text04']}>
-              <span>Lahore</span>
-            </span>
-            <img
-              src="/playground_assets/line11081-r8k8.svg"
-              alt="Line11081"
-              className={styles['line1']}
-            />
-          </div>
-        </div>
-        <img
-          src="/playground_assets/logo11081-t7o-200h.png"
-          alt="logo11081"
-          className={styles['logo1']}
-        />
         <img
           src={Rectangle}
-          alt="Rectangle1081"
+          alt="Rectangle"
           className={styles['rectangle']}
         />
         <span className={styles['text06']}>
           <span>Forgot your password?</span>
         </span>
-        <span className={styles['text08']}>
+        <span className={styles['donthaveaccount']}>
           <span>Don’t have an aacount?</span>
         </span>
-        <div className={styles['frame21']}>
-          <span className={styles['text10']}>
-            <span>Login</span>
-          </span>
-        </div>
-        <div className={styles['frame22']}></div>
-        <span className={styles['text12']}>
+        <span className={styles['login']}>
+          <span>Login</span>
+        </span>
+        <span className={styles['register']}>
           <span>Register</span>
         </span>
-        <div className={styles['frame8']}>
-          <span className={styles['text14']}>
-            <span>Email Address</span>
-          </span>
-        </div>
-        <div className={styles['frame18']}>
-          <span className={styles['text16']}>
-            <span>Password</span>
-          </span>
+
+        <form method='POST'>
+          <div className={styles['frame8']}>
+            <span className={styles['text08']}>
+              <input type="email" name="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} className={styles["textbar"]}/>
+            </span>
+          </div>
+          <div className={styles['frame17']}>
+            <span className={styles['text12']}>
+              <input type="text" name="password" placeholder= "Your Password" value={password} onChange={(e) => setPassword(e.target.value)} className={styles["textbar"]}/>
+            </span>
+          </div>
+        </form>
+      
+        <div className={styles['frame21']}>
+          <button type="submit" className={styles["button-1"]} onClick={loginUser}>Login</button> 
         </div>
         <span className={styles['text18']}>
           <span>Login</span>
@@ -74,11 +80,6 @@ export const Login = (props) => {
           <span>Recruiter Login</span>
         </span>
       </div>
-      <img
-        alt = "logo not loading"
-          src={logo}
-          className={styles['logo1']}
-        />
         <img alt="not loading" src = {homeimg1} className = {styles['img1']}/>
     </div>
 
