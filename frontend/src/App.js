@@ -6,12 +6,13 @@ import SignUpPage from './components/sign-up-page';
 import {Route, Routes} from 'react-router-dom';
 // import {Route, Routes} from 'react-router-dom@6.0.0-alpha.2'
 import {Login} from './Login';
-import {Register} from './Register';
+import Register from './Register'
 import HomePageJobSeeker from './components/homepages/home-page-jobseeker';
 import Resume from './components/resume';
 import ResumeDisplay from './components/resumedisplay';
 import Navbar from './components/homepages/navbar';
-
+import EmployeeSearch from './components/employeesearch';
+import EmployeeProfile from './components/employeeprofile';
 
 function App() {
   
@@ -42,6 +43,12 @@ function App() {
       </Route>
       <Route path="/resumedisplay">
         <Route index element = {<ResumeDisplay/>} />
+      </Route>
+      <Route path="/employeesearch">
+        <Route index element = {<EmployeeSearch/>} />
+      </Route>
+      <Route path="/employeeprofile">
+        <Route index element = {<EmployeeProfile/>} />
       </Route>
     </Routes>
 
