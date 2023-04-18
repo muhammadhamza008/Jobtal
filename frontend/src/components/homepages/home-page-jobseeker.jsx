@@ -10,12 +10,12 @@ const HomePageJobSeeker = (props) => {
         <div className={styles['search']}>
           <div className={styles['group2']}>
            
-                <button type="button" className={styles["button-1"]} onclick={console.log("ar")}>Post a New Job</button> 
+                <button type="button" className={styles["button-1"]} onclick={console.log("ar")}>Search</button> 
                 
           </div>
           <div className={styles['group1']}>
             <span className={styles['text02']}>
-              <input type="text" placeholder="Profession, position or location" className={styles["textbar"]} />
+              <input type="text" placeholder="Company name, job title, location" className={styles["textbar"]} />
             </span>
           </div>
 

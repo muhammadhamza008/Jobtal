@@ -136,4 +136,8 @@ button {
 
 .line {
     display: inline-block;
+    color: blue;
+    background-color: red;
+    text-emphasis-color: black;
+    text-decoration-color: black;
 }

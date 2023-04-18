@@ -45,10 +45,10 @@ const Home = (props) => {
           <span className={styles['text12']}>
             <span>
               {/* <span>Sign Up</span> */}
-              {/* <button>Sign Up</button>*/}
+              {/* <button>Sign Up</button> */}
               {/* <button type="button" className={styles["button-1"]} onClick={LoginButton}>Sign Up</button> */}
-              <SignUpButton/>
-              {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button>  */}
+              
+              <button type="button" className={styles["button-1"]} onClick={handleSwitch_signup}>Sign Up</button> 
               <br></br>
               <span></span>
             </span>
@@ -60,8 +60,8 @@ const Home = (props) => {
         <div className={styles['sign-in1']}>
 
           <div className={styles['rectangle5']}>
-            {/* <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button> */}
-            <LoginButton/>
+            <button type="button" className={styles["button-1"]} onClick={handleSwitch_login}>Sign In</button>
+            {/* <LoginButton/> */}
             <p></p>
           </div>
         </div>

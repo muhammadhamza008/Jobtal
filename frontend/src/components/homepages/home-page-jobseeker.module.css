@@ -328,7 +328,7 @@
     background: #dee1e2;
     display: block;
     height: 30px;
-    width: 200px;
+    width: 350px;
     
     
   }
@@ -364,10 +364,12 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-        width:150px;
+        width:100px;
         z-index: 10;
+        top: -10px;
+        left: 140px
       }
-      .sign-in {
+      /* .sign-in {
         top: 281px;
         left: 184px;
         width: 209px;
@@ -388,4 +390,4 @@
         flex-direction: row;
         justify-content: flex-start;
         background-color: transparent;
-      }
+      } */
