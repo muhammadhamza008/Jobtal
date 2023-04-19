@@ -15,7 +15,7 @@ import ResumeDisplay from './components/resume/resumedisplay';
 import Navbar from './components/homepages/navbar';
 import SearchJobSeekers from './components/Job Seeker/SearchPageJobSeekers';
 import ApplyJob from './components/Job Seeker/ApplyForJobs';
-
+import PostJob from './components/Employers/PostJob';
 
 function App() {
   
@@ -44,6 +44,9 @@ function App() {
       <Route path="/searchJobSeeker" index element = {<SearchJobSeekers />} />
 
       <Route path="/applyjob" index element = {<ApplyJob />} />
+
+      <Route path="/postjob" index element = {<PostJob />} />
+
         
     </Routes>
 

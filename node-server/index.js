@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 require('./db/connection');
 const User = require('./model/userSchema');
 const jobApplicationsRouter = require('./router/jobApplication');
+const postJobRouter = require('./router/postJob');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(require('./router/auth'));
 
 app.use(require('./router/jobApplication', jobApplicationsRouter));
+app.use(postJobRouter);
 // const employeeSchema = new mongoose.Schema({
 //     name: String
 //     });

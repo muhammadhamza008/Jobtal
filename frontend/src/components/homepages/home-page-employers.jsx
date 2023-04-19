@@ -4,10 +4,16 @@ import styles from './home-page-employers.module.css'
 import homeimg2 from './homeimg2.jpg';
 import LogoutButton from './logoutbutton';
 import LoginButton from './loginbutton';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const HomePageEmployers = (props) => {
+
+  const navigate = useNavigate()
+
+  const handlePostJob = () => {
+    navigate('/postjob')
+  }
 
   return (
     <div>
@@ -36,7 +42,7 @@ const HomePageEmployers = (props) => {
           <span>Jobs for everyone</span>
         </span>
         <div className={styles['sign-in']}>
-          <button type="button" className={styles["button-1"]} onclick={console.log("ar")}>Post a New Job</button> 
+          <button type="button" className={styles["button-1"]} onClick={handlePostJob}>Post a New Job</button> 
 
 
         </div>
