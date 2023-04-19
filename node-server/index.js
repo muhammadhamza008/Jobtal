@@ -1,109 +1,44 @@
 const express = require('express');
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
-
-
-// const dbURL = "mongodb+srv://user:wiQd44tSAZg9O24Q@cluster0.eknly6e.mongodb.net/JobPortal?retryWrites=true&w=majority"
-
-const dbURL = "mongodb+srv://umer:jMqgRbUVnoM9uAwh@cluster0.ejy7buo.mongodb.net/jobtal?retryWrites=true&w=majority"
-
-//connecting DB------------------------------------------------------------------------
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
-
-mongoose
-    .connect(dbURL,connectionParams)
-    .then(()=> {
-        console.info("Connected to DB")
-    })
-    .catch((e)=>{
-        console.log("Error",e)
-    });
-
-
 const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+require('./db/connection');
+const User = require('./model/userSchema');
+const jobApplicationsRouter = require('./router/jobApplication');
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json());
 
-//Employee Signup------------------------------------------------------------------------
+app.use(require('./router/auth'));
 
-const Employee = mongoose.model('Employee', {
-    email: String,
-    name: String,
-    password: String
-});
+app.use(require('./router/jobApplication', jobApplicationsRouter));
+// const employeeSchema = new mongoose.Schema({
+//     name: String
+//     });
+// const Employee = mongoose.model('Employee', employeeSchema);
 
-app.post('/signup', async (req,res)=>{
-    const {email,name, password} = req.body;
+// server.post('/demo',async (req,res)=>{
+//     let employee = new Employee
+//     employee.name = req.body.name
+//     const doc = await employee.save()
+//     console.log(req.body)
 
-    const employee = new Employee({email,name, password});
-    try{
-        await employee.save();
-        res.status(201).send({message: "Employee created"});
-    }catch(e){
-        console.log(e);
-        res.status(400).send({message: "Error creating employee"});
-    }
-    
-});
+//     console.log(doc)
+//     res.json(req.body)
+// })
 
-//Employee Search------------------------------------------------------------------------
+// server.get('/demo',async (req,res)=>{
+//     const docs = await Employee.find({});
+//     res.json(docs)
+// })
 
-app.post('/api/employees', async (req, res) => {
-    const employees = await Employee.find();
-    res.json(employees);
-    console.log(employees)
-});
+// server.listen(8080,() => {
+//     console.log('server started')
+// })
 
-    
-//Employee Profile------------------------------------------------------------------------
+const PORT = process.env.PORT || 3001;
 
-
-const UserSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true
-    },
-    phoneNumber: {
-        type: String,
-        required: true
-    }
-});
-
-// Model
-const User = mongoose.model('User',UserSchema);
-
-//Routes
-
-// post route
-app.post('/employeeprofile', async (req,res) => {
-    //getting data
-    const {name, location, phoneNumber} = req.body;
-
-    //creating new user
-    const user = new User({
-        name,
-        location,
-        phoneNumber
-    });
-
-    // deleting all previous rows that have the same 'name' element
-    const deletedUser = await User.deleteMany({name: name});
-
-    //saving in DB
-    await user.save();
-
-    res.status(201).send(user);
-});
-
-app.listen(8080, () => {
-    console.log("listening on port 8080");
-});
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

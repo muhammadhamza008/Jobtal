@@ -2,51 +2,49 @@ import './App.css';
 import React, {useState} from "react";
 import Home from './components/homepages/home1.jsx';
 import HomePageEmployers from './components/homepages/home-page-employers.jsx';
-import SignUpPage from './components/sign-up-page';
+
 import {Route, Routes} from 'react-router-dom';
 // import {Route, Routes} from 'react-router-dom@6.0.0-alpha.2'
-import {Login} from './Login';
-import Register from './Register';
+import LoginEmployee from './components/Registration/LoginEmployee';
+import LoginEmployer from './components/Registration/LoginEmployer';
+import RegisterEmployee from './components/Registration/RegisterEmployee';
+import RegisterEmployers from './components/Registration/RegisterEmployers';
 import HomePageJobSeeker from './components/homepages/home-page-jobseeker';
 import Resume from './components/resume/resume';
 import ResumeDisplay from './components/resume/resumedisplay';
 import Navbar from './components/homepages/navbar';
 import SearchJobSeekers from './components/Job Seeker/SearchPageJobSeekers';
+import ApplyJob from './components/Job Seeker/ApplyForJobs';
 
 
 function App() {
   
   return (
     <div>
-      {/* <Navbar /> */}
+
     <Routes>
-      <Route path="/">
-        <Route index element = {<Home />} />
-      </Route>
-      <Route path="/employer">
-        <Route index element = {<HomePageEmployers />} />
-      </Route>
-      <Route path="/signup">
-        <Route index element = {<Register />} />
-      </Route>
-      <Route path="/login">
-        <Route index element = {<Login />} />
-      </Route>
-      <Route path="/sign">
-        <Route index element = {<SignUpPage />} />
-      </Route>
-      <Route path="/jobseeker">
-        <Route index element = {<HomePageJobSeeker />} />
-      </Route>
-      <Route path="/resume">
-        <Route index element = {<Resume />} />
-      </Route>
-      <Route path="/resumedisplay">
-        <Route index element = {<ResumeDisplay/>} />
-      </Route>
-      <Route path="/searchJobSeeker">
-        <Route index element = {<SearchJobSeekers />} />
-      </Route>
+      <Route path="/" element = {<Home />} />
+
+      <Route path="/employer" index element = {<HomePageEmployers />} />
+        
+      <Route path="/signupemployee" index element = {<RegisterEmployee />} />
+        
+      <Route path="/signupemployer" index element = {<RegisterEmployers />} />
+        
+      <Route path="/loginemployee" index element = {<LoginEmployee />} />
+        
+      <Route path="/loginemployer" index element = {<LoginEmployer />} />
+       
+      <Route path="/jobseeker" index element = {<HomePageJobSeeker />} />
+        
+      <Route path="/resume" index element = {<Resume />} />
+        
+      <Route path="/resumedisplay" index element = {<ResumeDisplay/>} />
+        
+      <Route path="/searchJobSeeker" index element = {<SearchJobSeekers />} />
+
+      <Route path="/applyjob" index element = {<ApplyJob />} />
+        
     </Routes>
 
     </div>
