@@ -1,0 +1,5 @@
+// Override default variables before the import
+$navbar-nav: 30px;
+
+// Import Bootstrap and its default variables
+@import 'bootstrap/dist/css/bootstrap.css';
