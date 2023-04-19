@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import logo from './logo.png';
 import homeimg1 from './homeimg1.jpg';
 import Rectangle from './Rectangle.png'
 import styles from './login.module.css'
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 export const LoginEmployee = (props) => {
+
+  const {state, dispatch} = useContext(UserContext);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState ('');
@@ -30,6 +33,7 @@ export const LoginEmployee = (props) => {
       window.alert("Invalid Credentials");
     }
     else {
+      dispatch({type:"USER", payload:true});
       window.alert("Login Successful");
       navigate('/jobseeker');
     }
