@@ -30,6 +30,7 @@ export default function MyForm() {
 
       // Handle successful response
       console.log(response);
+      window.alert("Job Posted Successfully");
       // You can also reset the form values here if needed
     } catch (error) {
       // Handle errors
@@ -39,7 +40,7 @@ export default function MyForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <img src={img1} alt="" className="img-edit" />
+      {/* <img src={img1} alt="" className="img-edit" /> */}
       <h1 className="page-title">Post a Job</h1>
       <ul className="search-description">Do you have a new job opening? Select the specifications from the criteria below to post a new opening</ul>
       <h1 className="inner-title">Select the criteria</h1>

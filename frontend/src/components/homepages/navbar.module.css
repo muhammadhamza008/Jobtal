@@ -6,9 +6,13 @@
   margin-right: 30px;
 }
 
-/* .navbar-nav {
- 
-} */
+.nav-link {
+  padding: 0px 10px;
+}
+
+.table {
+  margin: 0px 30px;
+}
 
 .home-page-employers {
   width: 100%;

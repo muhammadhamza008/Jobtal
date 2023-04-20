@@ -18,6 +18,11 @@ import ApplyJob from './components/Job Seeker/ApplyForJobs';
 import PostJob from './components/Employers/PostJob';
 import Logout from './components/Registration/Logout';
 import {initialState, reducer} from './reducer/UseReducer';
+import Admin from './components/Admin/Admin';
+import Jobseekers from './components/Admin/Jobseekers';
+import Recruiter from './components/Admin/Recruiter';
+import JobsData from './components/Admin/JobsData';
+import LoginAdmin from './components/Registration/LoginAdmin';
 
 export const UserContext = createContext();
 
@@ -54,6 +59,16 @@ function App() {
           <Route path="/postjob" index element = {<PostJob />} />
 
           <Route path="/logout" index element = {<Logout />} />
+
+          <Route path="/admin" index element = {<Admin />} />
+
+          <Route path="/jobseekers" index element = {<Jobseekers />} />
+
+          <Route path="/recruiter" index element = {<Recruiter />} />
+
+          <Route path="/jobsdata" index element = {<JobsData />} />
+
+          <Route path="/loginadmin" index element = {<LoginAdmin />} />
             
         </Routes>
       </UserContext.Provider>

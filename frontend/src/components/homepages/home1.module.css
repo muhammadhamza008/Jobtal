@@ -324,10 +324,9 @@
 }
 
 .img1 {
-  top: 226px;
+  top: 100px;
   left: 700px;
-  width: 1600;
-  height: 1200;
+  width: 550px;
   position: absolute;
   border-color: transparent;
 }
