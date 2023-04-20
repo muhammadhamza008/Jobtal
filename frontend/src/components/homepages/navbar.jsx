@@ -26,7 +26,7 @@ const Navbar = (props) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/jobseeker">
+            <a className="nav-link" href="/searchJobSeeker">
               Search Job
             </a>
           </li>
@@ -51,7 +51,7 @@ const Navbar = (props) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/jobseeker">
+            <a className="nav-link" href="/searchJobSeeker">
               Search Job
             </a>
           </li>
@@ -60,6 +60,11 @@ const Navbar = (props) => {
               Post Job
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/logout">
+              Logout
+            </a>
+          </li>
         </>
       );
     }

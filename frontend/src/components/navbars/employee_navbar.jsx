@@ -59,6 +59,11 @@ const EmployeeNavbar = (props) => {
           <span className={styles['text12']}>
             <span onClick={apply}>Apply for Job</span>
           </span>
+          <span className={styles['text09']}>
+            <a className="nav-link" href="/logout">
+              Logout
+            </a>
+          </span>
           <div className={styles['resume']}>
             <span className={styles['text10']}>
               {/* <a href="" className="leafygreen-ui-1whab6f" onClick={resume}>Create a Resume</a> */}

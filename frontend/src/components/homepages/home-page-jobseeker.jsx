@@ -14,6 +14,10 @@ const HomePageJobSeeker = (props) => {
     setSearchTerm(event.target.value);
   };
 
+  const jobsearch = (event) => {
+    navigate('/searchJobSeeker');
+  };
+
   const handleSearch = async () => {
     try {
       const response = await axios.get('YOUR_BACKEND_API_URL', {
@@ -33,23 +37,24 @@ const HomePageJobSeeker = (props) => {
       <div className={styles['home-page-job-seeker']}>
         <div className={styles['search']}>
           <div className={styles['group2']}>
-            <button
+            {/* <button
               type="button"
               className={styles['button-1']}
               onClick={handleSearch}
             >
               Search
-            </button>
+            </button> */}
           </div>
           <div className={styles['group1']}>
             <span className={styles['text02']}>
-              <input
+              {/* <input
                 type="text"
                 placeholder="Company name, job title, location"
                 className={styles['textbar']}
                 value={searchTerm}
                 onChange={handleInputChange}
-              />
+              /> */}
+              <span onClick={jobsearch}>Click here to search for jobs</span>
             </span>
           </div>
         </div>

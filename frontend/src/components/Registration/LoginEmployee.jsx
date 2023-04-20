@@ -4,7 +4,7 @@ import homeimg1 from "./homeimg1.jpg";
 import Rectangle from "./Rectangle.png";
 import styles from "./login.module.css";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../Job Seeker/UserContext";
+import { UserContext } from "../../App";
 
 export const LoginEmployee = (props) => {
   const navigate = useNavigate();

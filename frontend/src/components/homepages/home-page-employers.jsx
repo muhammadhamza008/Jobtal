@@ -15,8 +15,8 @@ const HomePageEmployers = (props) => {
     navigate('/postjob')
   }
 
-  const handleSearch = () => {
-    navigate('/searchJobSeeker')
+  const employeesearch = () => {
+    navigate('/employeesearch')
   }
 
   return (
@@ -24,20 +24,18 @@ const HomePageEmployers = (props) => {
 
       <div className={styles['home-page-employers']}>
         <div className={styles['search']}>
-          <div className={styles['group2']}>
         
-          <button type="button" className={styles["button-1"]} onclick={handleSearch}>Search Job Seekers</button> 
-        
-          </div>
           <div className={styles['group1']}>
             <span className={styles['text02']}>
               {/* <input type="text" placeholder="Profession, position or location" className={styles["textbar"]} /> */}
+              <button type="button" className={styles["button-1"]} onClick={employeesearch}>Search Employees</button> 
             </span>
           </div>
         </div>
         <span className={styles['text04']}>
-          <span onclick={handleSearch}>Search Employees</span>
+          <span onClick={employeesearch}>Find a Jobseeker</span>
         </span>
+
         <span className={styles['text06']}>
           <span>Jobtal</span>
         </span>

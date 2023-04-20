@@ -56,6 +56,11 @@ const EmployerNavbar = (props) => {
           <span className={styles['text10']}>
             <span onClick={profile}>Update Profile</span>
           </span>
+          <span className={styles['text09']}>
+            <a className="nav-link" href="/logout">
+              Logout
+            </a>
+          </span>
           {/* <span className={styles['text12']}>
             <span onClick={apply}>Apply for Job</span>
           </span> */}

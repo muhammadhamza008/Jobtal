@@ -193,6 +193,24 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+.text09 {
+  top: 22px;
+  left: 550px;
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
 .text10 {
   top: 23px;
   left: 220px;
