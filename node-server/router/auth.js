@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 
 require("../db/connection");
 const User = require("../model/userSchema");
-const Data= require("../model/postJob");
+const Data = require("../model/postJob");
 
 router.post("/", async (req, res) => {
   res.send("Connected to server");
@@ -63,27 +63,27 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/loginadmin", async (req, res) => {
-    try {
-      const { email, password } = req.body;
-  
-      // res.send(req.body);
-  
-      if (!email || !password) {
-        return res.status(422).json({ error: "Please fill all the fields" });
-      }
-  
-      const loginUser = await User.findOne({ email: email });
-  
-      if (loginUser) {
-        const isMatch = await bcrypt.compare(password, loginUser.password);
-        if (!isMatch || loginUser.userType != "Admin")
-          return res.status(400).json({ error: "Invalid Credentials" });
-        else return res.status(201).json({ message: "Logged In" });
-      }
-    } catch (err) {
-      (err) => console.log(err);
+  try {
+    const { email, password } = req.body;
+
+    // res.send(req.body);
+
+    if (!email || !password) {
+      return res.status(422).json({ error: "Please fill all the fields" });
     }
-  });
+
+    const loginUser = await User.findOne({ email: email });
+
+    if (loginUser) {
+      const isMatch = await bcrypt.compare(password, loginUser.password);
+      if (!isMatch || loginUser.userType != "Admin")
+        return res.status(400).json({ error: "Invalid Credentials" });
+      else return res.status(201).json({ message: "Logged In" });
+    }
+  } catch (err) {
+    (err) => console.log(err);
+  }
+});
 
 router.get("/logout", (req, res) => {
   console.log("Hello my Logout Page");
@@ -102,9 +102,9 @@ router.get("/recruiter", async (req, res) => {
 });
 
 router.get("/jobsdata", async (req, res) => {
-    const allJobs = await Data.find();
-    res.send({ status: "OK", data: allJobs });
-  });
+  const allJobs = await Data.find();
+  res.send({ status: "OK", data: allJobs });
+});
 
 router.post("/deleteUser", async (req, res) => {
   const { userid } = req.body;
@@ -117,13 +117,23 @@ router.post("/deleteUser", async (req, res) => {
 });
 
 router.post("/deleteJob", async (req, res) => {
-    const { jobid } = req.body;
-    try {
-      const deleteJob = await Data.deleteOne({ _id: jobid });
-      res.send({ status: "Ok", data: "Deleted" });
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  const { jobid } = req.body;
+  try {
+    const deleteJob = await Data.deleteOne({ _id: jobid });
+    res.send({ status: "Ok", data: "Deleted" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.get("/alljobs", async (req, res) => {
+  const allJobs = await Data.find()
+    .then((jobs) => {
+        res.send({ status: "OK", data: jobs });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = router;

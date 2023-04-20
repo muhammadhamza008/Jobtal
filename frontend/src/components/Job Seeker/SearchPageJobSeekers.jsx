@@ -57,10 +57,8 @@ const SearchJobSeekers = (props) => {
             </div>
 
         </div>
+  
     )
-
-
-
 
 }
 

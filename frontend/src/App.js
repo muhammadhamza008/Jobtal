@@ -23,6 +23,7 @@ import Jobseekers from './components/Admin/Jobseekers';
 import Recruiter from './components/Admin/Recruiter';
 import JobsData from './components/Admin/JobsData';
 import LoginAdmin from './components/Registration/LoginAdmin';
+import AllJobs from './components/homepages/AllJobs';
 
 export const UserContext = createContext();
 
@@ -69,6 +70,8 @@ function App() {
           <Route path="/jobsdata" index element = {<JobsData />} />
 
           <Route path="/loginadmin" index element = {<LoginAdmin />} />
+
+          <Route path="/alljobs" index element = {<AllJobs />} />
             
         </Routes>
       </UserContext.Provider>

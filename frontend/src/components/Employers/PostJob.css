@@ -37,6 +37,24 @@
     left: 100px;
 }
 
+.title {
+    position: absolute;
+    top: 350px;
+    left: 950px;
+}
+
+.desc {
+    position: absolute;
+    top: 445px;
+    left: 100px;
+}
+
+.company {
+    position: absolute;
+    top: 445px;
+    left: 550px;
+}
+
 .cnic-heading {
     position: absolute;
     top: 350px;
