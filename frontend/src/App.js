@@ -26,6 +26,12 @@ import EmployeeSearch from './components/Employers/employeesearch';
 import SearchJobSeekers from './components/Job Seeker/SearchPageJobSeekers';
 import {initialState, reducer} from './reducer/UseReducer';
 import Logout from './components/Registration/Logout';
+import Admin from './components/Admin/Admin';
+import Jobseekers from './components/Admin/Jobseekers';
+import Recruiter from './components/Admin/Recruiter';
+import JobsData from './components/Admin/JobsData';
+import LoginAdmin from './components/Registration/LoginAdmin';
+import AllJobs from './components/homepages/AllJobs';
 
 export const UserContext = createContext();
 
@@ -39,6 +45,7 @@ function App() {
 
       <>
         <UserContext.Provider value = {{state, dispatch}}>
+        
         <Routes>
           <Route path="/" element = {<><HomeNavbar/> <Home /></>} />
 
@@ -72,8 +79,17 @@ function App() {
 
           <Route path="/logout" index element = {<><HomeNavbar/><Logout/></>} />
 
+          <Route path="/admin" index element = {<><Navbar/><Admin /></>} />
 
+          <Route path="/jobseekers" index element = {<><Navbar/><Jobseekers /></>} />
 
+          <Route path="/recruiter" index element = {<><Navbar/><Recruiter /></>} />
+
+          <Route path="/jobsdata" index element = {<><Navbar/><JobsData /></>} />
+
+          <Route path="/loginadmin" index element = {<><Navbar/><LoginAdmin /></>} />
+
+          <Route path="/alljobs" index element = {<><Navbar/><AllJobs /></>} />
             
         </Routes>
         </UserContext.Provider>
