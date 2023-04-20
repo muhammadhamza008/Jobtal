@@ -9,8 +9,8 @@ import { useLocation } from 'react-router-dom';
 const SearchJobSeekers = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
-    // const jobs = location.state.jobs;
-    const [jobs, setJobs] = useState([]);
+    const [allJobs, setAllJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
 
     const handleClick = () =>{
         navigate('/applyjob');
@@ -19,9 +19,22 @@ const SearchJobSeekers = (props) => {
     useEffect(() => {
         axios
           .post('http://localhost:3001/api/searchjobs')
-          .then(res => setJobs(res.data))
+          .then(res => {
+            setAllJobs(res.data);
+            setFilteredJobs(res.data);
+          })
           .catch(err => console.log(err));
       }, []);
+
+    const handleChange = (e) => {
+        const searchText = e.target.value;
+        const filteredList = allJobs.filter(job => {
+            return Object.keys(job).some(key => {
+                return job[key].toString().toLowerCase().includes(searchText.toLowerCase());
+            });
+        });
+        setFilteredJobs(filteredList);
+    }
 
     return(
         <div>
@@ -29,10 +42,15 @@ const SearchJobSeekers = (props) => {
             <h1 style={{position: 'absolute', top:'200px',left: '20px', fontSize: "50px"}}>
                 Your search results:
             </h1>
+            <input
+                type="text"
+                placeholder="Search Jobs"
+                onChange={handleChange}
+            />
             <div style={{display:'flex', flexDirection:'column', borderRadius:'300px', marginTop:'15vh', rowGap:"40px", marginRight:'10px', marginLeft:'10px'}}>
                 <div style={{display: 'flex', flexDirection:'row', columnGap:'20px'}}>
                     <div style={{backgroundColor:'grey', width:'50%', padding:"20px"}}>
-                        {jobs.map((job)=>(
+                        {filteredJobs.map((job)=>(
                             <div key={job.id}>
                                 <h3>{job.title}</h3>
                                 <p>Location: {job.location}</p>
@@ -49,33 +67,13 @@ const SearchJobSeekers = (props) => {
                             </div>
                         ))}
                     </div>
-                    {/* <div style={{backgroundColor:'grey', width:'50%', padding:"20px"}}>
-                        <h3>JOB TITLE</h3>
-                        <p>Full Time/Permanent - Company / Location</p>
-                        <p>Job description</p>
-                        <button style={{}} onClick={handleClick}>Apply Now</button>
-                    </div> */}
+               
                 </div>
-                {/* <div style={{display: 'flex', flexDirection:'row', columnGap:'20px'}}>
-                    <div style={{backgroundColor:'grey', width:'50%', padding:"20px"}}>
-                        <h3>JOB TITLE</h3>
-                        <p>Full Time/Permanent - Company / Location</p>
-                        <p>Job description</p>
-                        <button style={{}} onClick={handleClick}>Apply Now</button>
-                    </div>
-                    <div style={{backgroundColor:'grey', width:'50%', padding:"20px"}}>
-                        <h3>JOB TITLE</h3>
-                        <p>Full Time/Permanent - Company / Location</p>
-                        <p>Job description</p>
-                        <button style={{}} onClick={handleClick}>Apply Now</button>
-                    </div>
-                </div>              */}
+                
             </div>
 
         </div>
     )
-
-
 
 
 }

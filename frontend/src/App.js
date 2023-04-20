@@ -17,12 +17,12 @@ import ResumeDisplay from './components/resume/resumedisplay';
 import Navbar from './components/navbars/employee_navbar';
 import HomeNavbar from './components/navbars/home_navbar';
 import EmployerNavbar from './components/navbars/employer_navbar';
-import SearchJobSeekers from './components/Job Seeker/SearchPageJobSeekers';
 import ApplyJob from './components/Job Seeker/ApplyForJobs';
 import PostJob from './components/Employers/PostJob';
 import EmployeeProfile from './components/Job Seeker/employeeprofile';
 import EmployerProfile from './components/Employers/employerprofile';
 import EmployeeSearch from './components/Employers/employeesearch';
+import SearchJobSeekers from './components/Job Seeker/SearchPageJobSeekers';
 
 function App() {
   
@@ -45,7 +45,7 @@ function App() {
             
           <Route path="/loginemployer" index element = {<><HomeNavbar/> <LoginEmployer /></>} />
            
-          <Route path="/jobseeker" index element = {<> <Navbar/><HomePageJobSeeker /></>} />
+          {/* <Route path="/jobseeker" index element = {<> <Navbar/><HomePageJobSeeker /></>} /> */}
             
           <Route path="/resume" index element = {<Resume />} />
             
