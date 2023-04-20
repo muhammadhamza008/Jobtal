@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-  cnic: String,
+  organizationName: String,
   regNumber: String,
   industry: String,
   location: String,

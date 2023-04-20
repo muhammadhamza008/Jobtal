@@ -8,21 +8,32 @@ import styles from './home-page-jobseeker.module.css';
 const HomePageJobSeeker = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [jobs, setJobs] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
+    setErrorMessage('');
   };
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get('YOUR_BACKEND_API_URL', {
+      const response = await axios.get('http://localhost:3001/searchjobs', {
         params: {
-          search: searchTerm,
+          organizationName: searchTerm,
+          location: searchTerm,
+          jobLevel: searchTerm,
+          salary: searchTerm,
+          regNumber: searchTerm,
         },
       });
-      setJobs(response.data);
-      navigate.push({ pathname: '/jobs', state: { jobs: response.data } });
+      if (response.data.length === 0) {
+        setErrorMessage('No jobs found. Please try again.');
+        setJobs([]);
+      } else {
+        setJobs(response.data);
+        navigate.push({ pathname: '/searchJobSeeker', state: { jobs: response.data } });
+      }
     } catch (error) {
       console.error('Error fetching jobs:', error);
     }
@@ -59,6 +70,7 @@ const HomePageJobSeeker = (props) => {
         <span className={styles['text06']}>
           <span>Jobtal</span>
         </span>
+        {errorMessage && <div className={styles['error-message']}>{errorMessage}</div>}
       </div>
       <img alt="not loading" src={homeimg1} className={styles['img1']} />
     </div>

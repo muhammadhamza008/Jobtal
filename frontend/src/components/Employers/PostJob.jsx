@@ -16,7 +16,7 @@ export default function MyForm() {
 
     // Prepare the data object
     const data = {
-      cnic: textValue,
+      organizationName: textValue,
       registrationNumber: textValue1,
       industry: dropdownValue1,
       location: dropdownValue2,
@@ -43,8 +43,8 @@ export default function MyForm() {
       <h1 className="page-title">Post a Job</h1>
       <ul className="search-description">Do you have a new job opening? Select the specifications from the criteria below to post a new opening</ul>
       <h1 className="inner-title">Select the criteria</h1>
-      <label className="cnic-heading">
-        CNIC number:
+      <label className="organizationName-heading">
+        Organization Name:
         <input type="text" value={textValue} onChange={(e) => setTextValue(e.target.value)} />
       </label>
       

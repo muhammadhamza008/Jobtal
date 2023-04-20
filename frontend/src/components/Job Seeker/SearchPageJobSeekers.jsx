@@ -26,9 +26,10 @@ const SearchJobSeekers = (props) => {
                     <div style={{backgroundColor:'grey', width:'50%', padding:"20px"}}>
                         {jobs.map((job)=>(
                             <div key={job.id}>
-                                <h3>{job.title}</h3>
+                                <h3>{job.industry}</h3>
+                                <p>Position:{job.jobLevel}</p>
+                                <p>Salary:{job.salary}</p>
                                 <p>Location: {job.location}</p>
-                                <p>{job.location}</p>
                                 <button style={{}} onClick={handleClick}>Apply Now</button>
                             </div>
                         ))}

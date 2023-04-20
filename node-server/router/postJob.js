@@ -4,7 +4,7 @@ const Data = require('../model/postJob');
 
 router.post('/submitjob', (req, res) => {
   const newData = new Data({
-    cnic: req.body.cnic, // changed from req.body.textValue
+    organizationName: req.body.organizationName, // changed from req.body.textValue
     regNumber: req.body.registrationNumber, // changed from req.body.textValue1
     industry: req.body.industry, // changed from req.body.dropdownValue1
     location: req.body.location, // changed from req.body.dropdownValue2
