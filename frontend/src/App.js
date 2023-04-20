@@ -22,6 +22,7 @@ import ApplyJob from './components/Job Seeker/ApplyForJobs';
 import PostJob from './components/Employers/PostJob';
 import EmployeeProfile from './components/Job Seeker/employeeprofile';
 import EmployerProfile from './components/Employers/employerprofile';
+import EmployeeSearch from './components/Employers/employeesearch';
 
 function App() {
   

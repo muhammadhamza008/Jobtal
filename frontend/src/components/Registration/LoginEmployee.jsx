@@ -39,7 +39,7 @@ export const LoginEmployee = (props) => {
   };
 
   return (
-    <UserContext.Provider value={userEmail}> // Added new line
+    <UserContext.Provider value={userEmail}>
       <div>
         <div className={styles["sign-up-page"]}>
           <img
