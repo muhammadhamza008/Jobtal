@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../homepages/navbar';
+import Navbar from '../navbars/employee_navbar';
 
 import './ApplyJob.css';
 

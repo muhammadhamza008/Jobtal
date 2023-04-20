@@ -6,9 +6,10 @@ import styles from './home1.module.css';
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from './loginbutton';
-import LogoutButton from './logoutbutton';
+// import LogoutButton from './logoutbutton';
 import SignUpButton from './signupbutton';
 import { Login } from '../Registration/LoginEmployee';
+import './home1.module.css'
 
 
 const Home = (props) => {
@@ -51,7 +52,7 @@ const Home = (props) => {
               <p style={{color:'grey', marginTop:'250px', marginLeft:'75px', fontSize:'30px', fontFamily:'Verdana'}}>Sign up as a Job seeker:</p>
               <button type="button" style={{marginLeft:'75px'}} onClick={handleSwitch_signup_employee}>Sign Up</button> 
               <p style={{color:'grey', marginLeft:'75px', fontSize:'30px', fontFamily:'Verdana'}}>Sign up as an Employer:</p>
-              <button type="button" style={{marginLeft:'75px'}} onClick={handleSwitch_signup_employer}>Sign Up</button>
+              <button type="button" style={{marginLeft:'75px'}} className='button-1' onClick={handleSwitch_signup_employer}>Sign Up</button>
           </span>
           <span>
               <p style={{color:'grey', marginTop:'70px', marginLeft:'75px', fontSize:'30px', fontFamily:'Verdana'}}>Sign in as a Job seeker:</p>

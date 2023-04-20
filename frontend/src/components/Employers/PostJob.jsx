@@ -16,7 +16,7 @@ export default function MyForm() {
 
     // Prepare the data object
     const data = {
-      organizationName: textValue,
+      cnic: textValue,
       registrationNumber: textValue1,
       industry: dropdownValue1,
       location: dropdownValue2,
@@ -39,12 +39,12 @@ export default function MyForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <img src={img1} alt="" className="img-edit" />
+      {/* <img src={img1} alt="" className="img-edit" /> */}
       <h1 className="page-title">Post a Job</h1>
       <ul className="search-description">Do you have a new job opening? Select the specifications from the criteria below to post a new opening</ul>
       <h1 className="inner-title">Select the criteria</h1>
-      <label className="organizationName-heading">
-        Organization Name:
+      <label className="cnic-heading">
+        CNIC number:
         <input type="text" value={textValue} onChange={(e) => setTextValue(e.target.value)} />
       </label>
       

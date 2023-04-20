@@ -2,7 +2,7 @@ import React from 'react'
 import logo from './logo.png';
 import styles from './home-page-employers.module.css'
 import homeimg2 from './homeimg2.jpg';
-import LogoutButton from './logoutbutton';
+// import LogoutButton from './logoutbutton';
 import LoginButton from './loginbutton';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,10 @@ const HomePageEmployers = (props) => {
     navigate('/postjob')
   }
 
+  const handleSearch = () => {
+    navigate('/searchJobSeeker')
+  }
+
   return (
     <div>
 
@@ -22,17 +26,17 @@ const HomePageEmployers = (props) => {
         <div className={styles['search']}>
           <div className={styles['group2']}>
         
-          <button type="button" className={styles["button-1"]} onclick={console.log("ar")}>Search Job Seekers</button> 
+          <button type="button" className={styles["button-1"]} onclick={handleSearch}>Search Job Seekers</button> 
         
           </div>
           <div className={styles['group1']}>
             <span className={styles['text02']}>
-              <input type="text" placeholder="Profession, position or location" className={styles["textbar"]} />
+              {/* <input type="text" placeholder="Profession, position or location" className={styles["textbar"]} /> */}
             </span>
           </div>
         </div>
         <span className={styles['text04']}>
-          <span>Search Employees</span>
+          <span onclick={handleSearch}>Search Employees</span>
         </span>
         <span className={styles['text06']}>
           <span>Jobtal</span>
