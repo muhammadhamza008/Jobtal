@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import axios from 'axios'; 
 import img1 from './logo.png';
 import './PostJob.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function MyForm() {
+
+  const navigate = useNavigate();
+
   const [textValue, setTextValue] = useState('');
   const [textValue1, setTextValue1] = useState('');
+  const [textValue2, setTextValue2] = useState('');
+  const [textValue3, setTextValue3] = useState('');
+  const [textValue4, setTextValue4] = useState('');
   const [dropdownValue1, setDropdownValue1] = useState('');
   const [dropdownValue2, setDropdownValue2] = useState('');
   const [dropdownValue3, setDropdownValue3] = useState('');
@@ -18,6 +25,9 @@ export default function MyForm() {
     const data = {
       cnic: textValue,
       registrationNumber: textValue1,
+      title: textValue2,
+      desc: textValue3,
+      company: textValue4,
       industry: dropdownValue1,
       location: dropdownValue2,
       jobLevel: dropdownValue3,
@@ -30,6 +40,8 @@ export default function MyForm() {
 
       // Handle successful response
       console.log(response);
+      window.alert("Job Posted Successfully");
+      navigate('/alljobs');
       // You can also reset the form values here if needed
     } catch (error) {
       // Handle errors
@@ -51,6 +63,21 @@ export default function MyForm() {
       <label className="reg-num">
         Registration number:
         <input type="text" value={textValue1} onChange={(e) => setTextValue1(e.target.value)} />
+      </label>
+
+      <label className="title">
+        Job Title:
+        <input type="text" value={textValue2} onChange={(e) => setTextValue2(e.target.value)} />
+      </label>
+
+      <label className="desc">
+        Job Description:
+        <input type="text" value={textValue3} onChange={(e) => setTextValue3(e.target.value)} />
+      </label>
+
+      <label className="company">
+        Company:
+        <input type="text" value={textValue4} onChange={(e) => setTextValue4(e.target.value)} />
       </label>
       
       <label className="industry-heading">

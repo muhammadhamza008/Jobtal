@@ -6,6 +6,7 @@ import Home from './components/homepages/home1.jsx';
 import HomePageEmployers from './components/homepages/home-page-employers.jsx';
 
 import {Route, Routes} from 'react-router-dom';
+import React, {useState, createContext, useReducer} from "react";
 // import {Route, Routes} from 'react-router-dom@6.0.0-alpha.2'
 import LoginEmployee from './components/Registration/LoginEmployee';
 import LoginEmployer from './components/Registration/LoginEmployer';

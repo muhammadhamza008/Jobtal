@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 
 const dbURL  = 'mongodb://muhammadhamza:hamza123@ac-7eqpmyw-shard-00-00.ejy7buo.mongodb.net:27017,ac-7eqpmyw-shard-00-01.ejy7buo.mongodb.net:27017,ac-7eqpmyw-shard-00-02.ejy7buo.mongodb.net:27017/jobtal?ssl=true&replicaSet=atlas-5y798y-shard-0&authSource=admin&retryWrites=true&w=majority';
 
+// const dbURL  = 'mongodb+srv://hamza:hamza123@cluster0.dsmhzsu.mongodb.net/test?retryWrites=true&w=majority';
+
 const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

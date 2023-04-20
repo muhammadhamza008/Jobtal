@@ -6,7 +6,7 @@ import styles from './login.module.css'
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../App';
 
-export const LoginEmployer = (props) => {
+export const LoginAdmin = (props) => {
 
   const {state, dispatch} = useContext(UserContext);
 
@@ -17,7 +17,7 @@ export const LoginEmployer = (props) => {
   const loginUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('http://localhost:3001/login', {
+    const res = await fetch('http://localhost:3001/loginadmin', {
       method: 'POST',
       headers: {
         "Content-Type" : "application/json"
@@ -35,7 +35,7 @@ export const LoginEmployer = (props) => {
     else {
       dispatch({type:"USER", payload:true});
       window.alert("Login Successful");
-      navigate('/employer');
+      navigate('/admin');
     }
 
   }
@@ -54,13 +54,12 @@ export const LoginEmployer = (props) => {
         <span className={styles['donthaveaccount']}>
           <span>Don't have an account?</span>
           <p>                             
-              <a style={{color:'blue'}} href="http://localhost:3000/signupemployer">Sign Up</a>
+              <a style={{color:'blue'}} href="http://localhost:3000/signupemployee">Sign Up</a>
           </p>
         </span>
         <span className={styles['login']}>
           <span>Login</span>
         </span>
-        
 
         <form method='POST'>
           <div className={styles['frame8']}>
@@ -82,7 +81,7 @@ export const LoginEmployer = (props) => {
           <span>Login</span>
         </span>
         <span className={styles['text20']}>
-          <span>Employer</span>
+          <span>Admin</span>
         </span>
       </div>
         <img alt="not loading" src = {homeimg1} className = {styles['img1']}/>
@@ -91,4 +90,4 @@ export const LoginEmployer = (props) => {
   )
 }
 
-export default LoginEmployer;
+export default LoginAdmin;
