@@ -34,7 +34,7 @@ export const LoginEmployee = (props) => {
       window.alert("Login Successful");
       setUserEmail(email); // Added new line
       console.log(userEmail)
-      navigate("/jobseeker");
+      navigate("/searchJobSeeker");
     }
   };
 
